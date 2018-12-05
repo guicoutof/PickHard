@@ -99,7 +99,10 @@ public class Banco {
 	
 
 	
-
+	/***
+	 * funcao para selecionar os 5 campeões aleatoriamente
+	 * @return retorna um array com os 5 campeões escolhidos
+	 */
 	public ArrayList<String> gerarTime()  {
 		
 		ArrayList<String> campeoes = new ArrayList<String>();
@@ -130,6 +133,11 @@ public class Banco {
 		return campeoes;
 	}
 	
+	
+	/***
+	 * Funcao para exibir todos os Campeões cadastrados
+	 * @return retorna um array com todos os campeões armazenados
+	 */
 	public ArrayList<String> exibirCampeoes() {
 		ArrayList<String> campeoes = new ArrayList<String>();
 		
@@ -147,6 +155,10 @@ public class Banco {
 		return campeoes;
 	}
 	
+	/***
+	 * Insere um campeão fornecido como parametro
+	 * @param nam, nome do campeão que será inserido
+	 */
 	public void inserirCampeao(String name) {
 		try {
 			PreparedStatement prepStmt = con.prepareStatement("INSERT INTO `CampeaoLOL` VALUES (? ,?)");
@@ -158,6 +170,10 @@ public class Banco {
 		}
 	}
 	
+	/***
+	 * Idem a funcao de nome semelhante porem é utilizado como estrutura de armazenamento um array
+	 * @return os 5 campeões escolhidos aleatoriamente
+	 */
 	public ArrayList<String> gerarTimeArray() {
 		ArrayList<Integer> chaveCampeoes = new ArrayList<Integer>();
 		ArrayList<String> campeoes = new ArrayList<String>();
@@ -185,11 +201,20 @@ public class Banco {
 		return campeoes;
 	}
 	
+	/***
+	 * Idem a funcao de nome semelhante porem é utilizado como estrutura de armazenamento um array
+	 * @return o array que esta armazenado todos os campeões
+	 */
 	public ArrayList<String> exibirCampeoesArray() {
 		return this.champions;
 	}
 	
+	/***
+	 * Idem a funcao de nome semelhante porem é utilizado como estrutura de armazenamento um array
+	 * @param name nome do campeão que será inserido
+	 */
 	public void inserirCampeoesArray(String name) {
+		if(!name.isEmpty())
 		champions.add(name);
 	}
 }
