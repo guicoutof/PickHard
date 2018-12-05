@@ -217,4 +217,9 @@ public class Banco {
 		if(!name.isEmpty())
 		champions.add(name);
 	}
+	
+	public void removerCampeao(String name) {
+		if(!name.isEmpty())
+			champions.remove(name);
+	}
 }

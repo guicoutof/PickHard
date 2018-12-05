@@ -16,14 +16,23 @@
 		<input type="submit" value="Inserir"> 
 	</form>
 <div>
+<div>
+<h2>Remover Campeão</h2>
+</div>
+<form action="listarCampeoes" method="post">
+		Campeão: <input type="text" name="name"><br> 
+		<input type="submit" value="Remover"> 
+	</form>
 	<h1>Campeões</h1>
 </div>
+
 	<%
 	ArrayList<String> champions = (ArrayList<String>) request.getAttribute("championsGeneral");
 	for(String s: champions){
 	%><%=s%><br><%
 	}
 	%>
+	
 	<div>
 	<form action="gerarTime">
     	<input type="submit" value="Home" />

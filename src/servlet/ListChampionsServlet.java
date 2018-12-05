@@ -26,7 +26,9 @@ public class ListChampionsServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		String name = req.getParameter("name");
+		if(name!=null) banco.removerCampeao(name);
+		
 		ArrayList<String> championsGeneral ;
 		championsGeneral = banco.exibirCampeoesArray();
 		req.setAttribute("championsGeneral", championsGeneral);
@@ -38,7 +40,10 @@ public class ListChampionsServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		String name = req.getParameter("name");
 		banco.inserirCampeoesArray(name);
-		doPost(req, resp);
+		ArrayList<String> championsGeneral ;
+		championsGeneral = banco.exibirCampeoesArray();
+		req.setAttribute("championsGeneral", championsGeneral);
+		req.getRequestDispatcher("champions.jsp").forward(req, resp);
 		
 	}
 	
