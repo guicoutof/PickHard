@@ -10,6 +10,9 @@
 <body>
 <div><h1>Pick Hard<h1/></div>
 <div><p> Gerador randomico de times de League of Legends</p></div>
+<div><p><b>Alunos :</b> Guilherme Couto Fernandes</p>
+	<p>Leonardo Lucas Ferreira </p>
+</div>
 
 	<%
 	ArrayList<String> champions = null; 
